@@ -1,0 +1,106 @@
+[debug] [2023-07-30T05:16:34.799Z] ----------------------------------------------------------------------
+[debug] [2023-07-30T05:16:34.801Z] Command:       /home/aeturi/.nvm/versions/node/v20.5.0/bin/node /home/aeturi/.nvm/versions/node/v20.5.0/bin/firebase emulators:start
+[debug] [2023-07-30T05:16:34.802Z] CLI Version:   12.4.6
+[debug] [2023-07-30T05:16:34.802Z] Platform:      linux
+[debug] [2023-07-30T05:16:34.802Z] Node Version:  v20.5.0
+[debug] [2023-07-30T05:16:34.802Z] Time:          Sun Jul 30 2023 10:46:34 GMT+0530 (India Standard Time)
+[debug] [2023-07-30T05:16:34.802Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-30T05:16:34.925Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-30T05:16:34.925Z] > authorizing via signed-in user (aeturipradeep@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2023-07-30T05:16:34.931Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-30T05:16:34.931Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-30T05:16:34.931Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-07-30T05:16:34.956Z] [hub] writing locator at /tmp/hub-clone-96e62.json
+[debug] [2023-07-30T05:16:34.970Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-30T05:16:34.970Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-30T05:16:34.971Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[debug] [2023-07-30T05:16:34.975Z] defaultcredentials: writing to file /home/aeturi/.config/firebase/aeturipradeep_gmail_com_application_default_credentials.json
+[debug] [2023-07-30T05:16:34.978Z] Setting GAC to /home/aeturi/.config/firebase/aeturipradeep_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/aeturi/.config/firebase/aeturipradeep_gmail_com_application_default_credentials.json"}}
+[debug] [2023-07-30T05:16:34.979Z] > refreshing access token with scopes: []
+[debug] [2023-07-30T05:16:34.994Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-07-30T05:16:34.994Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-30T05:16:35.320Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-07-30T05:16:35.321Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-30T05:16:35.337Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62/adminSdkConfig [none]
+[debug] [2023-07-30T05:16:35.885Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62/adminSdkConfig 200
+[debug] [2023-07-30T05:16:35.886Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62/adminSdkConfig {"projectId":"clone-96e62","storageBucket":"clone-96e62.appspot.com"}
+[debug] [2023-07-30T05:16:35.899Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-96e62/sites 
+[debug] [2023-07-30T05:16:37.038Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-96e62/sites 200
+[debug] [2023-07-30T05:16:37.039Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-96e62/sites {"sites":[{"name":"projects/clone-96e62/sites/clone-96e62","defaultUrl":"https://clone-96e62.web.app","appId":"1:58093445337:web:1014c0f584fa145c4edec8","type":"DEFAULT_SITE"}]}
+[debug] [2023-07-30T05:16:37.039Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62/webApps/1:58093445337:web:1014c0f584fa145c4edec8/config [none]
+[debug] [2023-07-30T05:16:38.182Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62/webApps/1:58093445337:web:1014c0f584fa145c4edec8/config 200
+[debug] [2023-07-30T05:16:38.183Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62/webApps/1:58093445337:web:1014c0f584fa145c4edec8/config {"projectId":"clone-96e62","appId":"1:58093445337:web:1014c0f584fa145c4edec8","storageBucket":"clone-96e62.appspot.com","apiKey":"AIzaSyAJ8-ASR5SfX91NsFJ5WQT5tOhJl43iiyU","authDomain":"clone-96e62.firebaseapp.com","messagingSenderId":"58093445337","measurementId":"G-CSTDZTFPXM"}
+[debug] [2023-07-30T05:16:38.191Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62 [none]
+[debug] [2023-07-30T05:16:38.769Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62 200
+[debug] [2023-07-30T05:16:38.770Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-96e62 {"projectId":"clone-96e62","projectNumber":"58093445337","displayName":"amazon-clone","name":"projects/clone-96e62","resources":{"hostingSite":"clone-96e62"},"state":"ACTIVE","etag":"1_febc3e64-604d-42ca-b2e2-addf2ac12261"}
+[info] i  hosting[clone-96e62]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting[clone-96e62]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2023-07-30T05:16:38.803Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-07-30T05:16:38.803Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-07-30T05:16:38.803Z] Starting Emulator UI with command {"binary":"node","args":["/home/aeturi/.cache/firebase/emulators/ui-v1.11.7/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/aeturi/.cache/firebase/emulators/ui-v1.11.7/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-07-30T05:16:38.892Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-07-30T05:16:38.893Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/home/aeturi/amazon-clone/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/aeturi/amazon-clone/functions\" for Cloud Functions..."}}
+[debug] [2023-07-30T05:16:39.088Z] Validating nodejs source
+[debug] [2023-07-30T05:16:40.124Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-07-30T05:16:40.125Z] Building nodejs source
+[debug] [2023-07-30T05:16:40.125Z] Failed to find version of module node: reached end of search path /home/aeturi/amazon-clone/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2023-07-30T05:16:40.127Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-07-30T05:16:40.130Z] Found firebase-functions binary at '/home/aeturi/amazon-clone/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8962
+
+[debug] [2023-07-30T05:16:40.468Z] Got response code 400; body Failed to generate manifest from function source: ReferenceError: Cannot access 'cors' before initialization
+[info] shutdown requested via /__/quitquitquit
+
+[error] ⬢  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ 127.0.0.1:5000 │ n/a                             │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
