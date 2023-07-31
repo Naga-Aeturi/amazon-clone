@@ -8,6 +8,7 @@ import { getBasketTotal } from './reducer';
 import CurrencyFormat from 'react-currency-format';
 import axios from './axios';
 import { db } from './firebase';
+import firebase from 'firebase';
 
 function Payment() {
   const [{basket,user},dispatch]=useStateValue();
@@ -40,13 +41,14 @@ function Payment() {
 
   const handleSubmit=async (e)=>{
     e.preventDefault();
+     
+    if(!disabled && getBasketTotal(basket)!=0){
     setProcessing(true);
     const payload=await stripe.confirmCardPayment(clientSecret,{
         payment_method:{
            card:elements.getElement(CardElement)
         }
     }).then(({paymentIntent})=>{
-
         db.collection('users')
           .doc(user.uid)
           .collection('orders')
@@ -66,7 +68,12 @@ function Payment() {
         })
 
         navigate('/orders');
-    })
+      }
+    )}else if(getBasketTotal(basket)==0){
+      alert("Please add items into basket")
+    }else{
+      alert("Please provide the card number");
+    }
   }
   return (
     <div className='payment'>
