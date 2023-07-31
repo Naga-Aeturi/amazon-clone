@@ -18,7 +18,7 @@ function Payment() {
 
   const [error,setError]=useState(null);
   const [disabled,setDisabled]=useState(true);
-  const [processing,setProcessing]=useState(false);
+  const [processing,setProcessing]=useState('');
   const [succeeded,setSucceeded]=useState(false);
   const [clientSecret,setClientSecret]=useState(true);
 
@@ -26,7 +26,7 @@ function Payment() {
     const getClientSecret=async ()=>{
        const response=await axios({
         method:'post',
-        url: `/payment/create?total=${getBasketTotal(basket)}`
+        url: `/payments/create?total=${getBasketTotal(basket)*100}`
        });
        setClientSecret(response.data.clientSecret)
     }
@@ -125,7 +125,7 @@ function Payment() {
                        thousandSeparator={true}
                        prefix={'₹'}
                     />
-                    <button disbale={processing || disabled || succeeded}>
+                    <button disable={processing || disabled || succeeded}>
                         <span>{processing? <p>Processing</p>:'Buy Now'}</span>
                     </button>
                     </div>

@@ -2,12 +2,9 @@ import React from 'react'
 import './Order.css'
 import moment from 'moment'
 import CheckoutProduct from './CheckoutProduct'
-import { getBasketTotal } from './reducer'
 import CurrencyFormat from 'react-currency-format'
-import { useStateValue } from './StateProvider'
 
 function Order({order}) {
-  const [{basket},dispatch]=useStateValue();
   return (
     <div className='order'>
       <h2>Order</h2>
@@ -32,7 +29,7 @@ function Order({order}) {
          <h3 className='order_total'>Order Total:{value}</h3>
         )}
        decimalScale={2}
-       value={getBasketTotal(basket)}
+       value={order.data.amount / 100}
        displayType={'text'}
        thousandSeparator={true}
        prefix={'₹'}
