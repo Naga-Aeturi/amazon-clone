@@ -1,4 +1,4 @@
-.product {
+/* .product {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,10 +10,32 @@
     min-width: 100px;
     background-color: white;
     z-index: 1;
+  } */
+
+  .product {
+    flex: 0 0 calc(33.33% - 20px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px;
+    padding: 20px 0 10px 0;
+    max-height: 400px;
+    min-width: 100px;
+    background-color: white;
+    z-index: 1;
+  }
+
+  .title {
+    text-align: center;
+    /* Other styles for the title */
   }
   
   .rating {
     display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 5px;
   }
   
   .product > img {
@@ -32,7 +54,8 @@
   }
   
   .price {
-    margin-top: 5px;
+    margin-top: 7px;
+    text-align: center;
   }
   
   .info {

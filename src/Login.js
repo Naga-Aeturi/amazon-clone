@@ -18,11 +18,12 @@ function Login() {
 
     const register = e => {
         e.preventDefault();
-        auth.createUserWithEmailAndPassword(email, password)
-            .then((auth) => {
-                if (auth)navigator('/')
-            })
-            .catch(error => alert(error.message))
+        navigator('/Register')
+        // auth.createUserWithEmailAndPassword(email, password)
+        //     .then((auth) => {
+        //         if (auth)navigator('/')
+        //     })
+        //     .catch(error => alert(error.message))
     }
 
     return (
@@ -30,19 +31,20 @@ function Login() {
             <Link to='/'>
                 <img
                     className='amazon_logo'
-                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png' 
+                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png'
+                    alt=''
                 />
             </Link>
 
             <div className='box'>
-                <h1>Sign-in</h1>
+                <h1>Sign In</h1>
 
                 <form>
-                    <h5>E-mail</h5>
-                    <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
+                    <h2>E-mail</h2>
+                    <input type='text' value={email} onChange={e => setEmail(e.target.value)} style={{ fontSize: '20px' }}/>
 
-                    <h5>Password</h5>
-                    <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
+                    <h2>Password</h2>
+                    <input type='password' value={password} onChange={e => setPassword(e.target.value)} style={{ fontSize: '20px' }}/>
 
                     <button type='submit' onClick={signIn} className='signInButton'>Sign In</button>
                 </form>

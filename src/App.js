@@ -1,6 +1,6 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-
+import { db } from './firebase';
 //Components
 import Header from './Header';
 import Home from './Home';
@@ -21,11 +21,54 @@ import { Elements } from '@stripe/react-stripe-js'
 //CSS
 import './App.css';
 import Payment from './Payment';
+import Register from './Register';
 
 const promise=loadStripe('pk_test_51NYxHMSDoiKHF49gd3jx5VkUMazlunn9qnJQQlwx364YlJhWMwLb2FwTgyCyFquUzhCBzJaZ6jZ2JmTBVlLy4ODQ00xF0ueMxs');
 
 function App() {
-  const [{},dispatch]=useStateValue();
+  const [{},dispatch] = useStateValue();
+  const [ productUIDs, setProductUIDs ] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = db
+      .collection('Products')
+      .onSnapshot(snapshot => {
+        const uids = snapshot.docs.map(doc => doc.id);
+        setProductUIDs(uids);
+      });
+
+    return () => {
+        unsubscribe();
+    };
+  }, [db]);
+
+  useEffect(() => {
+    if (productUIDs.length > 0) {
+      const fetchProductFields = async () => {
+        const promises = productUIDs.map(async uid => {
+          const productDoc = await db.collection('Products').doc(uid).get();
+          return { id: uid, data: productDoc.data() };
+        });
+
+        Promise.all(promises)
+          .then(results => {
+            dispatch({
+                type: "SET_PRODUCTS",
+                item: results
+            });
+            dispatch({
+              type: "SET_FILTERED_PRODUCTS",
+              item: results
+          });
+          })
+          .catch(error => {
+            console.error('Error fetching product fields: ', error);
+          });
+      };
+      fetchProductFields();
+    }
+  }, [db, productUIDs]);
+
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -51,6 +94,7 @@ function App() {
             <Orders/>
           </div>
         }/>
+        <Route path='/Register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/checkout' element={(
           <div>

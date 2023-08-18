@@ -23,6 +23,26 @@ function Payment() {
   const [succeeded,setSucceeded]=useState(false);
   const [clientSecret,setClientSecret]=useState(true);
 
+  const [userName, setUserName] = useState('');
+  const [address, setAddress] = useState('');
+  if(user)
+  {
+    const userRef = db.collection('users').doc(user.uid);
+    userRef.get()
+      .then((doc) => {
+        if (doc.exists) {
+          const userData = doc.data();
+          setUserName(userData.username);
+          setAddress(userData.address);
+          } else {
+          console.log('No such document!');
+        }
+      })
+      .catch(error => {
+        console.error('Error getting document:', error);
+      });
+  }
+
   useEffect(()=>{
     const getClientSecret=async ()=>{
        const response=await axios({
@@ -42,21 +62,21 @@ function Payment() {
   const handleSubmit=async (e)=>{
     e.preventDefault();
      
-    if(!disabled && getBasketTotal(basket)!=0){
+    if(!disabled && getBasketTotal(basket) !== 0){
     setProcessing(true);
-    const payload=await stripe.confirmCardPayment(clientSecret,{
+    const payload = await stripe.confirmCardPayment(clientSecret,{
         payment_method:{
            card:elements.getElement(CardElement)
         }
     }).then(({paymentIntent})=>{
-        db.collection('users')
+      db.collection('users')
           .doc(user.uid)
           .collection('orders')
           .doc(paymentIntent.id)
           .set({
             basket:basket,
             amount:paymentIntent.amount,
-            created:paymentIntent.created
+            created:paymentIntent.created,
           })
 
         setSucceeded(true);
@@ -69,7 +89,7 @@ function Payment() {
 
         navigate('/orders');
       }
-    )}else if(getBasketTotal(basket)==0){
+    )}else if(getBasketTotal(basket) === 0){
       alert("Please add items into basket")
     }else{
       alert("Please provide the card number");
@@ -89,9 +109,8 @@ function Payment() {
                 <h1>Delivery Address</h1>
             </div>
             <div className='user_address'>
-                <p>{user?user.email:'Guest'}</p>
-                <p>Yerramukkapalli,Kadapa</p>
-                <p>AndhraPradesh,India</p>
+                <p>{user?userName:'Guest'}</p>
+                <p>{user?address: ''}</p>
             </div>
           </div>
 
