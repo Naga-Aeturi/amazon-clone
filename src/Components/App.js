@@ -1,27 +1,25 @@
 import React,{useEffect, useState} from 'react';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import { db } from './firebase';
+import { db } from '../firebase';
+
 //Components
 import Header from './Header';
 import Home from './Home';
 import Checkout from './Checkout';
 import Login from './Login';
 import Orders from './Orders';
+import Payment from './Payment';
+import Register from './Register';
 
 //contextProvider
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
  
 //firebase
-import { auth } from './firebase';
+import { auth } from '../firebase';
 
 //stripe
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
-
-//CSS
-import './App.css';
-import Payment from './Payment';
-import Register from './Register';
 
 const promise=loadStripe('pk_test_51NYxHMSDoiKHF49gd3jx5VkUMazlunn9qnJQQlwx364YlJhWMwLb2FwTgyCyFquUzhCBzJaZ6jZ2JmTBVlLy4ODQ00xF0ueMxs');
 

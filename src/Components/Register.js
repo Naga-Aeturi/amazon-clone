@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Register.css'
+import '../CSS/Register.css'
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "./firebase";
-import { db } from './firebase';
+import { auth } from "../firebase";
+import { db } from '../firebase';
 
 function Register() {
     const navigator = useNavigate();
