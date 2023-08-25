@@ -59,6 +59,10 @@
     border-color: #a88734 #9c7e31 #846a29;
   } 
 
+  .signInButton:hover {
+    background-color: orange;
+  }
+
 .registerButton {
     border-radius: 2px;
     width: 100%;
@@ -67,3 +71,7 @@
     margin-top: 10px;
     border-color: darkgray;
 } 
+
+.registerButton:hover {
+  background-color: orange;
+}
