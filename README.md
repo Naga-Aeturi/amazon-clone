@@ -2,7 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-STEPS TO FOLLOW:\
+## Steps to Follow:\
+
 1.CLONE the repositry using the repo link.\
 2.Go the the directory where you cloned the repo in the terminal.\
 3.Run npm install in the terminal to install the node modules.\
