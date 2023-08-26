@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Steps to Follow:\
+## Steps to Follow:
 
 1.CLONE the repositry using the repo link.\
 2.Go the the directory where you cloned the repo in the terminal.\
