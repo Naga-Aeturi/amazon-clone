@@ -10,7 +10,9 @@ STEPS TO FOLLOW:
 5.To start the backend firebase server go to functions directory in amazon-clone(run 'cd functions').
 6.Now run 'firebase emulators:start' in the terminal it will start the backend server.
 7.After this you will be able to see the frontend server like this
+![](https://github.com/Naga-Aeturi/amazon-clone/blob/main/Amazon%20clone%20part%201%20-%20Made%20with%20Clipchamp.gif)
 
+![](https://github.com/Naga-Aeturi/amazon-clone/blob/main/Amazon%20clone%20part%202%20-%20Made%20with%20Clipchamp.gif)
 
 ## Available Scripts
 
