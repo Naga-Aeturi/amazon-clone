@@ -2,14 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-STEPS TO FOLLOW:
-1.CLONE the repositry using the repo link.
-2.Go the the directory where you cloned the repo in the terminal.
-3.Run npm install in the terminal to install the node modules.
-4.To start the front end server run 'npm start' command in the terminal.
-5.To start the backend firebase server go to functions directory in amazon-clone(run 'cd functions').
-6.Now run 'firebase emulators:start' in the terminal it will start the backend server.
-7.After this you will be able to see the frontend server like this
+STEPS TO FOLLOW:\
+1.CLONE the repositry using the repo link.\
+2.Go the the directory where you cloned the repo in the terminal.\
+3.Run npm install in the terminal to install the node modules.\
+4.To start the front end server run 'npm start' command in the terminal.\
+5.To start the backend firebase server go to functions directory in amazon-clone(run 'cd functions').\
+6.Now run 'firebase emulators:start' in the terminal it will start the backend server.\
+7.After this you will be able to see the frontend server like this\
 ![](https://github.com/Naga-Aeturi/amazon-clone/blob/main/Amazon%20clone%20part%201%20-%20Made%20with%20Clipchamp.gif)
 
 ![](https://github.com/Naga-Aeturi/amazon-clone/blob/main/Amazon%20clone%20part%202%20-%20Made%20with%20Clipchamp.gif)
